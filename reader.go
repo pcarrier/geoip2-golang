@@ -307,7 +307,7 @@ func getDBType(reader *maxminddb.Reader) (databaseType, error) {
 	case "DBIP-ISP (compat=Enterprise)",
 		"DBIP-Location-ISP (compat=Enterprise)",
 		"GeoIP2-Enterprise":
-		return isEnterprise | isCity | isCountry, nil
+		return isEnterprise | isCity | isCountry | isISP | isASN, nil
 	case "GeoIP2-ISP", "GeoIP2-Precision-ISP":
 		return isISP | isASN, nil
 	default:
